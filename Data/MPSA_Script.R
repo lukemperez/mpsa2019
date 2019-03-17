@@ -13,6 +13,8 @@ mpsa_df <- read_dta("CCES18_UTB_OUTPUT.dta") # reads the Stata data more accurat
 
 # Now we can begin working on descriptive stats:
 # e.g., table showing War Power Knowledge by Voter Registration
+
+# Which branch of government declares war? (A: Congress)
 mpsa_df$warknow <- factor(mpsa_df$UTB301,
                        levels = c(1, 2, 3, 4),
                        labels = c("The President", "Congress", "The Supreme Court", "Don't Know"))
@@ -22,6 +24,130 @@ mpsa_df$registered  <- factor (mpsa_df$votereg,
                                labels = c("yes", "No", "Don't Know"))
 
 with(mpsa_df, table(mpsa_df$registered, mpsa_df$warknow))
+
+## Clean up the order later, but leave the above for now and finish reading qq 302-317
+# Which branch of government ratifies international treaties? (A: Congress)
+mpsa_df$irknow <- factor(mpsa_df$UTB302,
+						levels = c(1, 2, 3, 4),
+						labels = c("Congress", "The President", "The Supreme Court", "Don't Know"))
+
+# U.S. law allows for the use of sanctions against foreign countries who oppress religious minorities. 
+# Such laws enhance or weaken national security:
+
+mpsa_df$IRFsec <- factor(mpsa_df$UTB303,
+						levels = c(1, 2, 3, 4, 5, 8),
+						labels = c("Strongly Agree", "Somewhat Agree", "Somewhat Disagree", "Strongly Agree", "Don't Know", "Skipped"))
+
+# Which Religious Groups do you think these laws protect: 
+# Check all that apply:
+# Catholics
+
+mpsa_df$IRFcath <- factor(mpsa_df$UTB304_1,
+						levels = c(1,2),
+						labels = ("selected", "not selected"))
+
+# Protestants
+
+mpsa_df$IRFprot <- factor(mpsa_df$UTB304_2,
+						levels = c(1,2),
+						labels = c("selected", "not selected"))
+
+# Muslims
+
+mpsa_df$IRFMusl <- factor(mpsa_df$UTB304_3,
+						levels = c(1,2),
+						labels = c("selected", "not selected"))
+
+# Atheists
+
+mpsa_df$IRFathe <- factor(mpsa_df$UTB304_4,
+						levels = c (1,2),
+						labels = c("selected", "not selected"))
+
+# Indigenous Peoples
+
+mpsa_df$IRFindg <- factor(mpsa_df$UTB304_5,
+						levels = c(1,2),
+						labels = c ("selected", "not selected"))
+
+# All of them
+
+mpsa_df$IRFall <- factor(mpsa_df$UTB304_6,
+						levels = c (1,2),
+						labels = c ("selected", "not selected"))
+
+# Don't know 
+
+mpsa_df$IRFunkw <- factor(mpsa_df$UTB304_7,
+						levels = c(1,2),
+						labels = c("selected", "not selected"))
+
+# Now we want to know how voters think about sanctions and military force for the 
+# protection of ethnic and religious minorities
+# "Do you support or oppose each of the following proposals:"
+
+# Sanctions to protect ethnic minorities in foreign countries
+
+mpsa_df$sanctethnc <- factor(mpsa_df$UTB305,
+						levels = c(1, 2, 3, 8),
+						labels = c("Support", "Oppose", "Not Sure", "Skipped"))
+
+# Sanctions to protect religious minorities in foreign countries
+
+mpsa_df$sanctrelig <- factor(mpsa_df$UTB306,
+						levels = c(1, 2, 3, 8),
+						labels = c("Support", "Oppose", "Not Sure", "Skipped"))
+
+# Sanctions to protect human rights in foreign countries
+
+mpsa_df$sancthumrts <- factor(mpsa_df$UTB307,
+						levels = c(1, 2, 3, 8),
+						labels = c("Support", "Oppose", "Not Sure", "Skipped"))
+
+# UTB 308--310 asks whether voters support military interventions for the same as above
+
+# Do you support or oppose military intervention to prevent ethnic genocide in foreign countries?
+
+mpsa_df$milgenoc <- factor(mpsa_df$UTB308,
+						levels = c(1, 2, 3, 8),
+						labels = c("Support", "Oppose", "Not Sure", "Skipped"))
+
+# Do you support or oppose military intervention to prevent religious persecution in foreign countries?
+
+mpsa_df$milrelig <- factor(mpsa_df$UTB309,
+						levels = c(1, 2, 3, 8),
+						labels = c("Support", "Oppose", "Not Sure", "Skipped"))
+
+# Do you support or oppose military intervention to prevent or stop human rights violations in foreign countries?
+
+mpsa_df$milhumrts <- factor(mpsa_df$UTB310,
+						levels = c(1, 2, 3, 8),
+						labels = c("Support", "Oppose", "Not Sure", "Skipped"))
+
+# The final set inquires about congress and foreign policy. 
+# How important are each of the following factors when you decide whether or not to vote 
+# in an election? Please rate each using a 0-10 scale, where 10 means extremely important, 
+# 0 means not important at all, and 5 means medium importance.
+# 
+# NB: use ordered() because it's ranked 1-10.
+# Stable International Order (UTB312)
+
+mpsa_df$lio <- ordered(mpsa_df$UTB312,
+						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
+
+# Promoting Human Rights (UTB313)
+
+mpsa_df$prohumrts <- ordered(mpsa_df$UTB313,
+						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
+
+# Competition With China (UTB314)
+
+mpsa_df$sinocomp <- ordered(mpsa_df$UTB314,
+						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
+
 
 ## Below is scratch and not needed. Was bad practice and will remove. Keeping until I complete my reading as factor above.
 # Make a variable for each question
