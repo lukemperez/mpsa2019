@@ -43,13 +43,13 @@ mpsa_df$IRFsec <- factor(mpsa_df$UTB303,
 # Catholics
 
 mpsa_df$IRFcath <- factor(mpsa_df$UTB304_1,
-						levels = c(1,2),
-						labels = ("selected", "not selected"))
+						levels = c(1, 2),
+						labels = c("selected", "not selected"))
 
 # Protestants
 
 mpsa_df$IRFprot <- factor(mpsa_df$UTB304_2,
-						levels = c(1,2),
+						levels = c(1, 2),
 						labels = c("selected", "not selected"))
 
 # Muslims
@@ -148,6 +148,89 @@ mpsa_df$sinocomp <- ordered(mpsa_df$UTB314,
 						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
 						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
 
+# Competition with Russia (UTB315)
+
+mpsa_df$russcomp <- ordered(mpsa_df$UTB315,
+						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
+
+# Cybersecurity (UTB316)
+
+mpsa_df$cybersec <- ordered(mpsa_df$UTB316,
+						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
+
+# International Trade (UTB317)
+
+mpsa_df$itntltrade <- ordered(mpsa_df$UTB317,
+						levels = c (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+						labels = c ("Not all important", , , , , , , , , , , "Extremely Important"))
+
+# Now I go back to the common questions from the CCES 2018 to get some relevant variables
+
+# Job Approval for POTUS
+
+mpsa_df$spprtPOTUS <- ordered(mpsa_df$CC18_308a,
+						levels = c(1, 2, 3, 4, 5, 8),
+						labels = c("Strongly Approve", "Somewhat Approve", "Somewhat Disapprove", "Strongly Disapprove", "Not Sure", "Skipped"))
+
+# Job Approval for Congress
+
+mpsa_df$spprtcong <- ordered(mpsa_df$CC18_308b,
+						levels = c(1, 2, 3, 4, 5, 8),
+						labels = c("Strongly Approve", "Somewhat Approve", "Somewhat Disapprove", "Strongly Disapprove", "Not Sure", "Skipped"))
+
+# Job Approval for SCOTUS
+
+mpsa_df$spprtSCOTUS <- ordered(mpsa_df$CC18_308c,
+						levels = c(1, 2, 3, 4, 5, 8),
+						labels = c("Strongly Approve", "Somewhat Approve", "Somewhat Disapprove", "Strongly Disapprove", "Not Sure", "Skipped"))
+
+# Demographics
+# Region
+
+mpsa_df$reg <- factor(mpsa_rf$region, 
+						levels = c(1, 2, 3, 4)
+						labels = c("Northeast", "Midwest", "South", "West"))
+
+# Birth Year
+# Do I do anything for this? 
+
+# Gender
+
+mpsa_df$gend <- factor(mpsa_df$gender,
+						levels = c(1, 2),
+						labels = c("Male", "Female"))
+#education
+
+mpsa_df$edu <- ordered(mpsa_df$educ,
+						levels = c(1, 2, 3, 4, 5, 6),
+						labels = c("No HS", "High School Grad", "Some College", "2-year", "4-year", "Post-Grad"))
+         
+# Political Affiliations
+# Do these go as factor or ordered?
+
+mpsa_df$PID_3 <- factor(mpsa_df$pid3,
+						levels = c(1, 2, 3, 4, 5),
+						labels = c("Democrat", "Republican", "Independent", "Other", "Not Sure"))
+
+mpsa_df$PID_7 <- ordered(mpsa_df$pid7,
+						levels = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 98),
+						labels = c("Strong Democrat", "Not very strong Democrat", "Lean Democrat", "Independent", "Lean Republican", "Not Very Strong Republican", "Strong Republican", "Not Sure", "Don't Know", "Skipped"))
+
+
+# saved from prelim plotting in console. 
+plot(mpsa_df$PID_3, mpsa_df$IRFcath)
+plot(mpsa_df$PID_3, mpsa_df$IRFMusl)
+plot(mpsa_df$PID_3, mpsa_df$IRFprot)
+plot(mpsa_df$PID_3, mpsa_df$IRFall)
+plot(mpsa_df$PID_3, mpsa_df$IRFathe)
+plot(mpsa_df$PID_3, mpsa_df$sanctethnc)
+plot(mpsa_df$PID_3, mpsa_df$sanctrelig)
+plot(mpsa_df$PID_3, mpsa_df$sancthumrts)
+plot(mpsa_df$PID_3, mpsa_df$milgenoc)
+plot(mpsa_df$PID_3, mpsa_df$milhumrts)
+plot(mpsa_df$PID_3, mpsa_df$milrelig)
 
 ## Below is scratch and not needed. Was bad practice and will remove. Keeping until I complete my reading as factor above.
 # Make a variable for each question
