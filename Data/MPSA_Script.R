@@ -219,6 +219,7 @@ mpsa_df$PID_7 <- ordered(mpsa_df$pid7,
 						labels = c("Strong Democrat", "Not very strong Democrat", "Lean Democrat", "Independent", "Lean Republican", "Not Very Strong Republican", "Strong Republican", "Not Sure", "Don't Know", "Skipped"))
 
 
+
 # saved from prelim plotting in console. 
 plot(mpsa_df$PID_3, mpsa_df$IRFcath)
 plot(mpsa_df$PID_3, mpsa_df$IRFMusl)
@@ -232,7 +233,16 @@ plot(mpsa_df$PID_3, mpsa_df$milgenoc)
 plot(mpsa_df$PID_3, mpsa_df$milhumrts)
 plot(mpsa_df$PID_3, mpsa_df$milrelig)
 
-## Below is scratch and not needed. Was bad practice and will remove. Keeping until I complete my reading as factor above.
+# https://stats.idre.ucla.edu/r/dae/logit-regression/
+# mylogit <- glm(Y ~ x1 + x2 + x3, data = mydata, family = "binomial")
+
+
+####################################################
+# Below is scratch and not needed.
+# Was bad practice and will remove.
+# Keeping until I complete data manipulation above.
+####################################################
+
 # Make a variable for each question
 # Do I even need to do this or will I just use the "data$variable" qualifier in 
 # my code?
