@@ -7,6 +7,7 @@ library(foreign, stargazer)
 # Load MPSA Data
 mpsa_df <- read.dta("CCES18_UTB_OUTPUT.dta") 
 
+# Start with my questions:
 # QQ UTB 301-302 need to be reformed into a binary variable such that the correct answer, "Congress," 
 # yields a "1" and all others yield a "0".
 
@@ -19,8 +20,17 @@ mpsa_df$UTB303 <- ordered(mpsa_df$UTB303)
 
 # QQ. UTB312-317 needs to be reforemd such that it is read as ordered. 
 
+# Now we can work on the control variables
+# Both pid3 and pid7 need to be resorted such that Republican is highest, Independents are in the middle, and Democrats lowest.
+## I think I recall that standard practice is to treat D as higher value, but I suspect Rs will track with support.
 
-# Regression Alliance
-# Control variables: find them
+# Q. gender needs to be transformed so that female yields "1", male "0", and "skipped" yields an NA
+# The gender question should be a categorical variable
+
+# Education should be ordered, not factor.
+
+mpsa_df$educ <- ordered(mpsa_df$educ)
+
+# Data Analysis, remember to think carefully re control variables
 # https://stackoverflow.com/questions/25711041/r-linear-regression-control-for-a-variable
 # Looks like adding an asterisk. e.g., glm(data ~ mpsa_df$UTB303*mpsa_df$pew_churatd, data = mpsa_df, family = "binomial")
