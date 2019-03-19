@@ -27,8 +27,15 @@ Explaining this behavior has, however, posed difficulty for researchers. These p
 This paper beings to explore the link between public knowledge and support for international religious freedom and the activities of the US government which promote this particular human right with exceptional energy. Drawing on a unique data set of questions on the 2018 Cooperative Congressional Election Survey (CCES). The questions test for political knowledge about foreign policy before investigating the attitudes of voters on issues of international religious freedom.
 
 # Literature Review
+## Political Development of Grand Strategy
 
-#. Work in public opinion finds a weak link between the general public and elite decision making [@jacobs2005:whoinfluencesFP].
+
+## Political opinions toward International Religious Freedom
+Given the above development of international religious freedom, it remains an open question whether and to what extend voters are knowledgeable of and supportive of international religious freedom. International relations scholars who investigate foreign policy have speculated several different causal pathways for individual voter preference. 
+
+> Studies which assert no connection between public opinion and policy run counter to the findings of international relations scholars who find democracies are unique actors which are often constrained or enabled by the the people who make up the democratic polity. Snyder (1991) argues that democracies are more war prone because the general public often misunderstands how security is achieved, preferring empire when defensive posture would be more stable. Trubowitz (1998) finds that competition between regions within the United States created three blocs; competition and bargaining between these blocs attributed to distinct foreign policy designs. These regional blocs were animated by the interests of the general public and fought by the congressional representatives who elected them. Wagner (2007) argues that international relations is largely a function of bargaining models, not only between states, but between elites within a state and between elites and the masses within a state. These claims imply that publics do, contrary to the above claims, have at least some loose connection which permits them to influence policy outcomes. 
+
+#. Work in public opinion finds a weak link between the general public and elite decision making [@jacobs2005:whoinfluencesFP]. Foreign policy decision-making tracks more closely with elite and business opinion.
 #. Work in international relations generally finds a tighter link between general public and decision-making, although the findings tend to be focused on war and national security [@snyder2013:myths].
 #. Religion may work differently than economics and war since religion has potential to organize stronger social than other values and can, under certain conditions, compete with politics [@snyder2011:religIR, 3]. <!-- Not just "omitted variable" -->
 #. During the Cold War, e.g., elites relied on religion and religious freedom rhetoric to mobilize national support for containment [@inboden2008:soulcontainment @herzog2011:spiritualindustrial].
@@ -36,7 +43,10 @@ This paper beings to explore the link between public knowledge and support for i
 
 # Data
 
+I have original questions added to the CCES 2018. Sample Size, 1000; nationally representative; 
+
 # Analysis
+#. Given the widespread support of IRF policies, we ought hypothesize that support for IRF is widespread across the ideologial spectrum.
 
 # Discussion
 
