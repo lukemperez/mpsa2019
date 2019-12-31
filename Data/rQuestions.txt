@@ -1,7 +1,0 @@
-0. Looks like the variables are all "NA". But I think it is an empty field. When viewing the dataframe, "NA" is in greyed-out italics. 
-
-1. How I can find out which of my columns are in what number? I want to load the dataframe with a small amount of variables. There are 646 in the dataset, but perhaps 1 or 2 dozen are relevant. I should be able to do something like MPSA0 <- :rio:("/path/to/file") and then mpsaDF <- MPSA0(1:4, 300:310, 480:482) or something to that effect. 
-
-2. Maybe this is just another repeat of before, but do I need to "get" a new variable for every variable I'm working with? e.g., instead of writing "mpsa$UTB301_1" everytime I want to reference that in my code, cannot I not just assign it a short name (name <- mpsa2019$UTB301_1). Then when doing descriptive or even inferential work, I could just write "table(name1,name2)" rather than typing out the long names every time? 
-
-3. Speaking of tables, I am googling the question incorrectly because I know there's an answer but I just can't remember: when doing tables, R gives me the values rather than the names assigned to the values. E.g., One question is who declares war: "Congress", "President", "Supreme Court", "Don't Know". When getting my frequency dist, or comparing it with party ID, I'd like the output to say the names rather than "1", "2", etc. 
